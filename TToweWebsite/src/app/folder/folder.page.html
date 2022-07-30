@@ -14,8 +14,8 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ pageData.header }}</strong>
-    <p>{{pageData.body}}</p>
+  <div id="container" *ngFor="let item of pageData.items" >
+    <strong class="capitalize">{{ item.header }}</strong>
+    <p>{{item.body}}</p>
   </div>
 </ion-content>
