@@ -2,8 +2,12 @@ ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
 }
 
+.split-pane-visible > ion-menu {
+  max-width: 304px!important;
+}
+
 ion-menu.md ion-content {
-  --padding-start: 8px;
+  --padding-start: 2vw;
   --padding-end: 8px;
   --padding-top: 20px;
   --padding-bottom: 20px;
@@ -13,9 +17,7 @@ ion-menu.md ion-list {
   padding: 20px 0;
 }
 
-ion-menu.md ion-note {
-  margin-bottom: 30px;
-}
+
 
 ion-menu.md ion-list-header,
 ion-menu.md ion-note {

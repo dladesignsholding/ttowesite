@@ -3,13 +3,15 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>W. Travis Towe, Esq.</ion-list-header>
-          <ion-note>404.993.9172</ion-note>
-
+          <ion-note class="ion-text-center">The Law Office of</ion-note>
+          <ion-list-header class="ion-text-center">W. Travis Towe, Esq.</ion-list-header>
+          <ion-note class="ion-text-center">404.993.9172</ion-note>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
+                <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+                <ion-header>
+                {{ p.title }}
+              </ion-header>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>

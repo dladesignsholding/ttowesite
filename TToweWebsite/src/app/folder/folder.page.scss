@@ -2,9 +2,28 @@ ion-menu-button {
   color: var(--ion-color-primary);
 }
 
+ion-title {
+  text-align: center;
+  color: var(--ion-color-dark);
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  font-family: 'Merriweather', serif;
+}
+#subtitle{
+  color: var(--ion-color-dark);
+  text-align: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
 #container {
   text-align: center;
-  padding: 5%;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 
 #container strong {
