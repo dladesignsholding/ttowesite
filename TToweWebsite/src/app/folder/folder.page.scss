@@ -5,12 +5,53 @@ ion-menu-button {
 ion-title {
   text-align: center;
   color: var(--ion-color-dark);
-  padding-left: 5vw;
+  padding-left: 2vw;
   padding-right: 5vw;
   padding-top: 5vh;
-  padding-bottom: 5vh;
+  padding-bottom: 2vh;
   font-family: 'Merriweather', serif;
 }
+
+.bodySubtitle
+{
+  font-weight: bold;
+  text-align: center;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  width: 100%
+}
+.centered{
+  text-align: center;
+  width: 100%;
+}
+
+.cardTitle{
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.bodyContent{
+  text-align: center;
+  float: none;
+  overflow-y: scroll;
+  hyphens: auto;
+  min-width: 35vw;
+}
+
+.mainRow{
+  max-height: 50vh; 
+  flex-wrap: nowrap;
+}
+
+ion-img::part(image){
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-bottom: 2vh;
+  max-height: 35vh;
+  width: auto;
+  float: left;
+}
+
 #subtitle{
   color: var(--ion-color-dark);
   text-align: center;
@@ -22,8 +63,8 @@ ion-title {
   text-align: center;
   padding-left: 5vw;
   padding-right: 5vw;
-  padding-top: 5vh;
-  padding-bottom: 5vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
 
 #container strong {
@@ -40,4 +81,23 @@ ion-title {
 
 #container a {
   text-decoration: none;
+}
+
+.footertext{
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .mainRow{
+    max-height: 50vh; 
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  ion-img::part(image){
+    padding-bottom: 1vh;
+    max-height: 35vh;
+    width: 100%;
+    float: none;
+  }
 }

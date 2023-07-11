@@ -13,14 +13,13 @@ export class FolderPage implements OnInit {
   public appPages;
   public pageData = {
     title: 'Loading',
-    header: '',
-    body: ''
+    subtitle: '',
+    items: []
   };
   constructor(private activatedRoute: ActivatedRoute, private gStoreService: gStore) { }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
-    this.appPages = this.gStoreService.getAppPages();
     import('../locale/' + this.folder + ".json").then((data) => {      
       this.loadPageData(data);
      }).catch(error =>{console.log(error.message)});

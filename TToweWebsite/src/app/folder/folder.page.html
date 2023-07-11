@@ -3,9 +3,14 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title >{{ pageData.title }}
-      <ion-note id="subtitle">{{ pageData.subtitle }}</ion-note>
-    </ion-title>
+    <ion-grid>
+      <ion-row *ngIf="pageData.title != null">
+        <ion-title >{{ pageData.title }} </ion-title>
+      </ion-row>
+      <ion-row *ngIf="pageData.subtitle != null">
+        <ion-label class="centered" id="subtitle">{{ pageData.subtitle }}</ion-label>
+      </ion-row>    
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
@@ -18,8 +23,37 @@
 
   <div id="container" *ngFor="let item of pageData.items" >
     <ion-card >
-      <ion-card-header>{{ item.header }}</ion-card-header>
-      <ion-card-content>{{item.body}}</ion-card-content>
+      <ion-grid>
+        <ion-row *ngIf="item.header != null">
+          <ion-col>
+            <ion-card-header>
+              <ion-card-title class="cardTitle">
+                {{ item.header }}
+              </ion-card-title>
+            </ion-card-header>  
+          </ion-col>
+        </ion-row>
+        <ion-row class="mainRow">
+            <ion-img *ngIf="item.picLink != null" class="imgHolder" src="{{item.picLink}}" alt="{{item.picLinkDescription}}"></ion-img>
+            <ion-card-content class="bodyContent" *ngIf="item.body != null">
+              {{item.body}}
+            </ion-card-content>
+        </ion-row>
+        <ion-row *ngIf="item.bodyTwoBold != null">
+          <ion-card-subtitle class="bodySubtitle">
+            {{item.bodyTwoBold}}
+          </ion-card-subtitle>
+        </ion-row>
+    </ion-grid>
     </ion-card>
   </div>
+  <ion-footer>
+    <ion-toolbar>
+      <ion-title>
+        Copyright © 2023 W. Travis Towe Law Firm -- All Rights Reserved
+      </ion-title>
+      <p class="footertext">Disclaimer: Attorney Advertising. This website is designed for general information only. </p>
+      <p class="footertext">The information presented on this website should not be construed to be formal legal advice nor the formation of a lawyer/client relationship.</p>
+      </ion-toolbar>
+  </ion-footer>
 </ion-content>

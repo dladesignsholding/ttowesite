@@ -1,19 +1,26 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
-export class gStore {
-    constructor() { }
 
-    appPages = [
-        { title: 'About Me', url: '/home', icon: 'home' },
-        { title: 'Consultation', url: '/consultation', icon: 'call' },
-        { title: 'DUI Law', url: '/info', icon: 'archive' }
-      ];  
+export class gStore{
 
-    getAppPages(){ 
-        return this.appPages;  
+    constructor() { 
     }
 
+    public appPages;
+
+    async getAppPages()
+    {  
+      if(this.appPages){
+        return this.appPages
+      }
+      var indexes = await import('../locale/index.json').then((data) => { 
+        return data;   
+       }).catch(error =>{console.log(error.message)});  
+      this.appPages = indexes;
+      return await indexes;
+    }   
 }
